@@ -78,7 +78,8 @@ func (t *Tyme) BeginOfHour() *Tyme {
 
 // BeginOfDay returns the begin of the day
 func (t *Tyme) BeginOfDay() *Tyme {
-	return With(t.Truncate(24 * time.Hour))
+	y, m, d := t.Date()
+	return With(time.Date(y, m, d, 0, 0, 0, 0, globalLoc))
 }
 
 // BeginOfWeek returns the begin of the week

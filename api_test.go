@@ -42,3 +42,9 @@ func TestParse(t *testing.T) {
 	assert(Parse("2022.02.21 23:02:59"), "2022-02-21 23:02:59")
 	assert(Parse("2022/02/21 23:02:59"), "2022-02-21 23:02:59")
 }
+
+func TestToday(t *testing.T) {
+	assert := assertT(t)
+
+	assert(Today(), "2022-05-27 00:00:00")
+}

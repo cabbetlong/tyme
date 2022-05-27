@@ -17,7 +17,7 @@ t, err := StrictParse("2022.05.22")
 t := MustParse("2022/05/22")
 ```
 - Settings global formats to parse different string of time
-> There are some built-in formats, and also yout can append some custom formats:
+> There are some built-in formats, and also yout can append some custom formats.
 ```go
 AppendFormats("2006-01-02 15:04:05", "...")
 ```
@@ -28,7 +28,7 @@ AppendFormats("2006-01-02 15:04:05", "...")
 Now().String() // use the default layout: 2006-01-02 15:04:05
 ```
 - Layout
-| You can also use layout functions to get date, time string.
+> You can also use layout functions to get date, time string.
 ```go
 SetDTLayout("2016.01.02 15:04:05") // set datetime layout
 SetDayout("2016.01.02 15:04:05") // set date layout
@@ -39,7 +39,7 @@ Now().TimeLayout() // 16:14:53
 ```
 
 ### Comparison
-- Comparison between Tyme objects:
+- Comparison between Tyme objects
 ```go
 t1 := Parse("2022-05-20 16:14:53")
 t2 := Parse("2022-05-20 16:14:55")
@@ -50,7 +50,7 @@ t1.Before(t2) // true
 t1.After(t2) // false
 t3.Between(t1, t2) // true
 ```
-- Comparison with time string:
+- Comparison with time string
 > **NOTE:** All of below functions is not safely! If tyme cannot parse the string, it will panic.
 ```go
 t1 := Now()
@@ -62,7 +62,7 @@ t1.BetweenS("2022-05-20", "2022-05-22")
 ```
 
 ### Time calculations
-Increase or decrease time according to different time units:
+Increase or decrease time according to different time units
 ```go
 t1 := Parse("2022-05-20 16:14:53")
 
