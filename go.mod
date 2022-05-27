@@ -1,4 +1,4 @@
-module tyme
+module github.com/cabbetlong/tyme
 
 go 1.18
 
