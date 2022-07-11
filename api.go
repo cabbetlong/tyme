@@ -178,6 +178,29 @@ func Between(begin, end *Tyme) bool {
 }
 
 // BetweenS check if now between begin and end time
+// NOTE: This function is not safely! If tyme can't parse the string, it will panic.
 func BetweenS(begin, end string) bool {
 	return Now().BetweenS(begin, end)
+}
+
+// After check if now after the given time
+func After(r *Tyme) bool {
+	return Now().After(r)
+}
+
+// AfterS check if now after the given time string
+// NOTE: This function is not safely! If tyme can't parse the string, it will panic.
+func AfterS(r string) bool {
+	return Now().AfterS(r)
+}
+
+// Before check if now before the given time
+func Before(r *Tyme) bool {
+	return Now().Before(r)
+}
+
+// BeforeS check if now before the given time string
+// NOTE: This function is not safely! If tyme can't parse the string, it will panic.
+func BeforeS(r string) bool {
+	return Now().BeforeS(r)
 }
