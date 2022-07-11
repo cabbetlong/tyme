@@ -271,3 +271,9 @@ func (t *Tyme) DateLayout() string {
 func (t *Tyme) TimeLayout() string {
 	return t.Format(globalTLayout)
 }
+
+// ==> Difference
+
+func (t *Tyme) DiffDays(r *Tyme) int {
+	return int(t.BeginOfDay().Time.Sub(r.BeginOfDay().Time).Hours() / 24)
+}

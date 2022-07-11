@@ -3,6 +3,8 @@ package tyme
 import (
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestTyme_BeforeS(t *testing.T) {
@@ -332,4 +334,12 @@ func TestTyme_Sunday(t *testing.T) {
 	assert(Parse("2022-05-15").Sunday(), "2022-05-15 00:00:00")
 	assert(Parse("2022-05-16").Sunday(), "2022-05-15 00:00:00")
 	SetFirstDayOfWeek(time.Monday)
+}
+
+func TestTyme_DiffDays(t *testing.T) {
+	is := assert.New(t)
+
+	is.Equal(Parse("2022-05-15").DiffDays(Parse("2022-05-15")), 0)
+	is.Equal(Parse("2022-05-14").DiffDays(Parse("2022-05-15")), -1)
+	is.Equal(Parse("2022-05-16").DiffDays(Parse("2022-05-15")), 1)
 }
