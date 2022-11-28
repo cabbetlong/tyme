@@ -68,6 +68,14 @@ func SetFirstDayOfWeek(weekday time.Weekday) {
 
 // ==> Specific time
 
+func UnixMicro(usec int64) *Tyme {
+	return &Tyme{Time: time.UnixMicro(usec)}
+}
+
+func UnixMilli(msec int64) *Tyme {
+	return &Tyme{Time: time.UnixMilli(msec)}
+}
+
 // With 将time.Time对象包装为*Tyme
 func With(t time.Time) *Tyme {
 	return &Tyme{Time: t}
@@ -113,7 +121,7 @@ func MustParse(s string) *Tyme {
 
 // Now 返回当前时间
 func Now() *Tyme {
-	return With(time.Now())
+	return With(time.Now().In(globalLoc))
 }
 
 // ==> Weekdays
